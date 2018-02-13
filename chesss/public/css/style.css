@@ -1,0 +1,27 @@
+#board {
+	width: 700px;
+	height: 700px;
+	background-color: #dcaa52;
+	border:10px solid #ff7a32;
+}
+
+.board__block {
+	height: 100px;
+	width: 100px;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.board__block--brown{
+	background-color: brown;
+}
+
+.board__block--skin{
+	background-color: #ffffed;
+}
+
+img.queen {
+	max-width:100%;
+	max-height:100%;
+}
