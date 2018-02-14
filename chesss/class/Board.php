@@ -51,11 +51,11 @@ class Board extends Draw {
 	/**
 	 * Decide if queen can be placed at the location
 	 *
-	 * @param $y
+	 * @param int $y
 	 *
 	 * @return bool
 	 */
-	protected function queenCanBePlacedAtTheLocation($y) : bool
+	protected function queenCanBePlacedAtTheLocation(int $y) : bool
 	{
 		for ($i = 0; $i < $this->solved_queens; $i ++)
 		{
