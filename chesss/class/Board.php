@@ -101,7 +101,6 @@ class Board extends Draw {
 	 */
 	private function collideWithOtherQueenOnCrossMove(int $x, int $y) : bool
 	{
-
 		if ($this->backSlashCollision($x, $y) || $this->slashCollision($x, $y))
 		{
 			return true;
@@ -136,10 +135,10 @@ class Board extends Draw {
 	 */
 	private function slashCollision(int $x, int $y) : bool
 	{
-		$nNew = $this->solved_queens - $x - 1;
+		$xNew = $this->solved_queens - $x - 1;
 		$y = $y + $x + 1;
 
-		return $this->isAlreadyOccupiedByQueen($nNew,$y);
+		return $this->isAlreadyOccupiedByQueen($xNew,$y);
 	}
 
 }
