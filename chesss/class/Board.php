@@ -55,7 +55,7 @@ class Board extends Draw {
 	 *
 	 * @return bool
 	 */
-	protected function queenCanBePlacedAtTheLocation($y)
+	protected function queenCanBePlacedAtTheLocation($y) : bool
 	{
 		for ($i = 0; $i < $this->solved_queens; $i ++)
 		{
@@ -81,7 +81,7 @@ class Board extends Draw {
 	 *
 	 * @return bool
 	 */
-	protected function isAlreadyOccupiedByQueen(int $x, int $y)
+	protected function isAlreadyOccupiedByQueen(int $x, int $y) : bool
 	{
 		if ($this->blocks[ $x ][ $y ] === 1)
 		{
@@ -99,7 +99,7 @@ class Board extends Draw {
 	 *
 	 * @return bool
 	 */
-	private function collideWithOtherQueenOnCrossMove(int $x, int $y)
+	private function collideWithOtherQueenOnCrossMove(int $x, int $y) : bool
 	{
 
 		if ($this->backSlashCollision($x, $y) || $this->slashCollision($x, $y))
@@ -118,7 +118,7 @@ class Board extends Draw {
 	 *
 	 * @return bool
 	 */
-	private function backSlashCollision(int $x, int $y)
+	private function backSlashCollision(int $x, int $y) : bool
 	{
 		$xNew = $this->solved_queens - 1 - $x;
 		$y = $y - $x - 1 ;
@@ -134,7 +134,7 @@ class Board extends Draw {
 	 *
 	 * @return bool
 	 */
-	private function slashCollision(int $x, int $y)
+	private function slashCollision(int $x, int $y) : bool
 	{
 		$nNew = $this->solved_queens - $x - 1;
 		$y = $y + $x + 1;
