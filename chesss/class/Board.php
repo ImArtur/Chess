@@ -14,6 +14,9 @@ class Board extends Draw {
 
 	protected $board_size = 7;
 
+	public $solved_rows = 0;
+	public $solved_queens = 0;
+
 	protected $blocks = array(
 		[0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0],
@@ -29,7 +32,7 @@ class Board extends Draw {
 	 *
 	 * @param $column
 	 */
-	protected function addQueen($column)
+	public function addQueen($column)
 	{
 		$this->blocks[ $this->solved_queens ][ $column ] = 1;
 		$this->solved_queens ++;
@@ -41,7 +44,7 @@ class Board extends Draw {
 	 *
 	 * @param $column
 	 */
-	protected function removeQueen($column)
+	public function removeQueen($column)
 	{
 		$this->solved_queens --;
 		$this->solved_rows --;
@@ -55,7 +58,7 @@ class Board extends Draw {
 	 *
 	 * @return bool
 	 */
-	protected function queenCanBePlacedAtTheLocation(int $y) : bool
+	public function queenCanBePlacedAtTheLocation(int $y) : bool
 	{
 		for ($i = 0; $i < $this->solved_queens; $i ++)
 		{

@@ -1,7 +1,7 @@
 <?php
 require('./class/Chess.php');
 
-$board = new Chess();
+$chess = new Chess();
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ $board = new Chess();
 </head>
 <body>
 <h3>Chess</h3>
-	<?php $board->render(); ?>
+	<?php $chess->board->render(); ?>
 </body>
 </html>
 

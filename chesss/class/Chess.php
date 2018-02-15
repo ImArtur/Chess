@@ -7,11 +7,11 @@ require('Board.php');
 
 class Chess extends Board {
 
-	protected $solved_rows = 0;
-	protected $solved_queens = 0;
+	public $board;
 
 	public function __construct()
 	{
+		$this->board = new Board();
 		$this->createQueen();
 	}
 
@@ -19,11 +19,11 @@ class Chess extends Board {
 	{
 		for($col = 0; $col < 7; $col++)
 		{
-			if($this->queenCanBePlacedAtTheLocation($col))
+			if($this->board->queenCanBePlacedAtTheLocation($col))
 			{
-				$this->addQueen($col);
+				$this->board->addQueen($col);
 
-				if($this->solved_queens === 7)
+				if($this->board->solved_queens === 7)
 				{
 					return true;
 				}
@@ -31,7 +31,7 @@ class Chess extends Board {
 					return true;
 				}
 
-				$this->removeQueen($col);
+				$this->board->removeQueen($col);
 			}
 		}
 
